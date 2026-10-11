@@ -1,0 +1,35 @@
+{
+  "title": "Polymarket volume hits a record",
+  "short_title": "Polymarket record",
+  "subtitle": "The exchange's own dashboard shows the surge.",
+  "paragraphs": [
+    [
+      {"text": "Polymarket saw record volume this week. The figure came from the "},
+      {"text": "exchange's own dashboard", "url": "https://www.polymarket.com/stats"},
+      {"text": "."}
+    ],
+    [
+      {"text": "As we "},
+      {"text": "reported last week", "report_id": "rA1green"},
+      {"text": ", volume set a record."}
+    ],
+    [
+      {"text": "Line one\nline two", "footnote": 3},
+      {"note": "a run with no text"},
+      {"text": " and a "},
+      {"text": "bad link", "url": "javascript:alert(1)"},
+      {"text": "."}
+    ],
+    [
+      {"text": "Compare "},
+      {"text": "an older report", "report_id": "rZZunknown"},
+      {"text": ": 3 < 5 & \"quoted\"."}
+    ]
+  ],
+  "sources": [
+    {"url": "https://www.polymarket.com/stats", "label": "polymarket.com", "primary": true},
+    {"url": "https://example.com/data?a=1&b=2", "label": "example.com"},
+    {"report_id": "rA1green", "label": "Polymarket volume doubles"},
+    {"report_id": "rZZunknown", "label": "An unpublished report"}
+  ]
+}

@@ -1,0 +1,10 @@
+# Normalise line endings for everything git detects as text: the repo stores LF,
+# each platform checks out its native ending, and an EOL-only change no longer
+# shows as modified (the Cite repo's lesson of 2026-09-17: CRLF rewrites by the
+# Windows IDE looked dirty to WSL git and tripped the deploy script's clean-tree
+# gate).
+* text=auto
+
+# Markdown stays LF so planning docs and .claude/commands diff cleanly against the
+# other repos' copies (../chalkstream.dev/docs/planning-standards.md § 5).
+*.md text eol=lf
