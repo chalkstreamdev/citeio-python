@@ -67,6 +67,10 @@ Build each report's URL from the `slug` on its list row. Cite sets the slug once
 
 A non-2xx response raises `citeio.APIError`, with `status`, `url`, and `body` (the first 500 characters of the response). Network errors and timeouts pass through unchanged. The client does not retry and does not cache: run your build on a schedule, and the next run is the retry.
 
+## Example site
+
+[predictable.gg](https://predictable.gg/) is built with this package. It is a news site about prediction markets: every post is a Cite report, published unedited. An hourly build lists the project's reports, keeps those that `publishable` passes, and writes one static page per report with `body_html` and `sources_html`. Its `resolve` returns a post's URL only for a report the site publishes, so a citation of a hidden report renders as plain text. The site's stylesheet draws the Sources list's numbers and chips from the class names above, with a CSS counter and `::after` content, because the markup carries none.
+
 ## Requirements
 
 Python 3.11 or later. No dependencies outside the standard library.
