@@ -6,7 +6,7 @@ the standard library, and it ignores any field it does not know, so a Cite
 addition never breaks a page.
 """
 
-__version__ = "0.1.0.dev0"
+__version__ = "0.1.0"
 
 from citeio.client import APIError, Client
 from citeio.helpers import parse_datetime, publishable

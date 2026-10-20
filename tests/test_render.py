@@ -1,4 +1,6 @@
+import html
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -129,3 +131,34 @@ def test_sources_empty_is_empty_string(p):
 def test_golden_file(p):
     expected = (FIXTURES / "presentation.html").read_text(encoding="utf-8")
     assert body_html(p, resolve) + "\n" + sources_html(p, resolve) == expected
+
+
+# The live fixture is one Predictable report detail captured from cite.io on
+# 2026-10-20 (plan Task 6), with both image URLs replaced by placeholders.
+_PARAGRAPH_BREAK = re.compile(r"\n[ \t]*\n(?:[ \t]*\n)*")
+
+
+@pytest.fixture
+def live():
+    return json.loads((FIXTURES / "report_detail.json").read_text(encoding="utf-8"))
+
+
+def test_live_fixture_runs_join_to_paragraphs(live):
+    body = live["content"]["body"].replace("\r\n", "\n").replace("\r", "\n").strip()
+    expected = [t.strip() for t in _PARAGRAPH_BREAK.split(body) if t.strip()]
+    served = ["".join(r["text"] for r in para) for para in live["presentation"]["paragraphs"]]
+    assert served == expected
+    assert expected, "the fixture has a body"
+
+
+def test_live_fixture_renders(live):
+    runs = [r for para in live["presentation"]["paragraphs"] for r in para]
+    external = [r for r in runs if "url" in r]
+    internal = [r for r in runs if "report_id" in r]
+    assert external and internal, "the fixture has both citation kinds"
+    out = body_html(live)
+    assert out.count('<a class="citeio-link citeio-external"') == len(external)
+    assert "citeio-internal" not in out
+    assert out.count('<p class="citeio-paragraph">') == len(live["presentation"]["paragraphs"])
+    for run in internal:
+        assert html.escape(run["text"], quote=True) in out

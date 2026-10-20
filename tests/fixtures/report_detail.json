@@ -1,0 +1,217 @@
+{
+  "id": "00v6YNIaj7",
+  "slug": "founders-fund-pressed-polymarket-controls",
+  "research_note": {
+    "id": "mRcpQMTlG9",
+    "name": "Founders Fund pushed Polymarket to tighten controls after reviewing Coplan's personal spending"
+  },
+  "project": {
+    "id": "D1T5obckbY",
+    "name": "Predictable: Prediction market news"
+  },
+  "content": {
+    "body": "Founders Fund required Polymarket’s founder and chief executive, Shayne Coplan, to repay company money used for private jet travel, apartment rent and other personal expenses, and to strengthen financial controls, before the venture firm invested in 2025. Bloomberg reported that Polymarket was not generating revenue when Founders Fund conducted its review.\n\nThe investment proceeded after Coplan met those conditions. Polymarket said the jet was used for business purposes and that Coplan had proactively disclosed that expense to investors.\n\nThe scrutiny comes as Polymarket seeks a new funding round at a $21 billion valuation, led by 1789 Capital, with Founders Fund participating. That would be more than double the $9 billion valuation assigned in 2025 when Intercontinental Exchange, or ICE, invested. ICE disclosed that it had agreed to invest up to $2 billion and to distribute Polymarket’s event-driven data globally.\n\nICE and Founders Fund also made the appointment of a chief financial officer a condition of their investments, according to reporting carried by BloomingBit. Polymarket named Warren Jenson, a former president and chief financial officer of Nielsen, as its CFO on Sept. 10. He reports to Coplan and is responsible for finance, capital strategy, long-range planning and financial infrastructure.\n\nInvestors have recommended that Polymarket add a chief operating officer, though no such appointment had been made at the time of the report. Coplan has acknowledged the company’s “growing pains” and said he had to change himself into what Polymarket needed, identifying recruitment of strong executives as his top priority for 2026.\n\nAs we reported in August, Polymarket had also been rebuilding its growth, compliance and risk teams as it prepared for a busier period of prediction-market trading. The company has recruited executives from Goldman Sachs, DoorDash and Robinhood, while Alex Spiro joined its board and became involved in day-to-day management, including hiring.\n\nPolymarket had previously led prediction markets by trading volume but lost that position to Kalshi while dealing with technical outages, customer complaints, lawsuits and a new Commodity Futures Trading Commission probe.",
+    "tags": [
+      "polymarket",
+      "founders-fund",
+      "shayne-coplan",
+      "corporate-governance",
+      "warren-jenson",
+      "prediction-markets",
+      "intercontinental-exchange"
+    ],
+    "title": "Founders Fund demanded repayment and controls before Polymarket investment",
+    "subtitle": "The venture firm’s 2025 diligence uncovered personal spending by Shayne Coplan, as investors now press the prediction-market company to deepen its leadership bench.",
+    "citations": [
+      {
+        "url": "https://www.bloomberg.com/news/articles/2026-10-20/polymarket-investors-push-ceo-coplan-for-change-as-kalshi-gains-ground",
+        "type": "external",
+        "quote": "Founders Fund required Polymarket’s founder and chief executive, Shayne Coplan, to repay company money used for private jet travel, apartment rent and other personal expenses, and to strengthen financial controls, before the venture firm invested in 2025.",
+        "anchor": "repay company money used"
+      },
+      {
+        "url": "https://en.bloomingbit.io/feed/news/122571",
+        "type": "external",
+        "quote": "The scrutiny comes as Polymarket seeks a new funding round at a $21 billion valuation, led by 1789 Capital, with Founders Fund participating.",
+        "anchor": "new funding round at a $21 billion valuation"
+      },
+      {
+        "url": "https://www.prnewswire.com/news-releases/polymarket-appoints-warren-jenson-as-chief-financial-officer-302875360.html",
+        "type": "external",
+        "quote": "Polymarket named Warren Jenson, a former president and chief financial officer of Nielsen, as its CFO on Sept. 10.",
+        "anchor": "named Warren Jenson",
+        "primary": true
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1571949/000094787125000890/ss5432176_8k.htm",
+        "type": "external",
+        "quote": "ICE disclosed that it had agreed to invest up to $2 billion and to distribute Polymarket’s event-driven data globally.",
+        "anchor": "invest up to $2 billion",
+        "primary": true
+      },
+      {
+        "type": "internal",
+        "quote": "As we reported in August, Polymarket had also been rebuilding its growth, compliance and risk teams as it prepared for a busier period of prediction-market trading.",
+        "anchor": "As we reported in August",
+        "report_id": "nSwQIiEsgs"
+      }
+    ],
+    "short_title": "Founders Fund pressed Polymarket controls"
+  },
+  "presentation": {
+    "title": "Founders Fund demanded repayment and controls before Polymarket investment",
+    "short_title": "Founders Fund pressed Polymarket controls",
+    "subtitle": "The venture firm’s 2025 diligence uncovered personal spending by Shayne Coplan, as investors now press the prediction-market company to deepen its leadership bench.",
+    "paragraphs": [
+      [
+        {
+          "text": "Founders Fund required Polymarket’s founder and chief executive, Shayne Coplan, to "
+        },
+        {
+          "text": "repay company money used",
+          "url": "https://www.bloomberg.com/news/articles/2026-10-20/polymarket-investors-push-ceo-coplan-for-change-as-kalshi-gains-ground"
+        },
+        {
+          "text": " for private jet travel, apartment rent and other personal expenses, and to strengthen financial controls, before the venture firm invested in 2025. Bloomberg reported that Polymarket was not generating revenue when Founders Fund conducted its review."
+        }
+      ],
+      [
+        {
+          "text": "The investment proceeded after Coplan met those conditions. Polymarket said the jet was used for business purposes and that Coplan had proactively disclosed that expense to investors."
+        }
+      ],
+      [
+        {
+          "text": "The scrutiny comes as Polymarket seeks a "
+        },
+        {
+          "text": "new funding round at a $21 billion valuation",
+          "url": "https://en.bloomingbit.io/feed/news/122571"
+        },
+        {
+          "text": ", led by 1789 Capital, with Founders Fund participating. That would be more than double the $9 billion valuation assigned in 2025 when Intercontinental Exchange, or ICE, invested. ICE disclosed that it had agreed to "
+        },
+        {
+          "text": "invest up to $2 billion",
+          "url": "https://www.sec.gov/Archives/edgar/data/1571949/000094787125000890/ss5432176_8k.htm"
+        },
+        {
+          "text": " and to distribute Polymarket’s event-driven data globally."
+        }
+      ],
+      [
+        {
+          "text": "ICE and Founders Fund also made the appointment of a chief financial officer a condition of their investments, according to reporting carried by BloomingBit. Polymarket "
+        },
+        {
+          "text": "named Warren Jenson",
+          "url": "https://www.prnewswire.com/news-releases/polymarket-appoints-warren-jenson-as-chief-financial-officer-302875360.html"
+        },
+        {
+          "text": ", a former president and chief financial officer of Nielsen, as its CFO on Sept. 10. He reports to Coplan and is responsible for finance, capital strategy, long-range planning and financial infrastructure."
+        }
+      ],
+      [
+        {
+          "text": "Investors have recommended that Polymarket add a chief operating officer, though no such appointment had been made at the time of the report. Coplan has acknowledged the company’s “growing pains” and said he had to change himself into what Polymarket needed, identifying recruitment of strong executives as his top priority for 2026."
+        }
+      ],
+      [
+        {
+          "text": "As we reported in August",
+          "report_id": "nSwQIiEsgs"
+        },
+        {
+          "text": ", Polymarket had also been rebuilding its growth, compliance and risk teams as it prepared for a busier period of prediction-market trading. The company has recruited executives from Goldman Sachs, DoorDash and Robinhood, while Alex Spiro joined its board and became involved in day-to-day management, including hiring."
+        }
+      ],
+      [
+        {
+          "text": "Polymarket had previously led prediction markets by trading volume but lost that position to Kalshi while dealing with technical outages, customer complaints, lawsuits and a new Commodity Futures Trading Commission probe."
+        }
+      ]
+    ],
+    "sources": [
+      {
+        "url": "https://www.prnewswire.com/news-releases/polymarket-appoints-warren-jenson-as-chief-financial-officer-302875360.html",
+        "label": "prnewswire.com",
+        "primary": true
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1571949/000094787125000890/ss5432176_8k.htm",
+        "label": "sec.gov",
+        "primary": true
+      },
+      {
+        "url": "https://www.bloomberg.com/news/articles/2026-10-20/polymarket-investors-push-ceo-coplan-for-change-as-kalshi-gains-ground",
+        "label": "bloomberg.com"
+      },
+      {
+        "url": "https://en.bloomingbit.io/feed/news/122571",
+        "label": "en.bloomingbit.io"
+      },
+      {
+        "report_id": "nSwQIiEsgs",
+        "label": "Polymarket hires growth chief and reshapes marketing before fall trading surge"
+      }
+    ]
+  },
+  "image_url": "https://cite.io/media/example.webp",
+  "share_image_url": "https://cite.io/media/example.png",
+  "grade": 3,
+  "grade_detail": {
+    "model": "gpt-5.6-luna",
+    "scale": 3,
+    "reasons": {
+      "sourcing": "Bloomberg’s own reporting covers the central development, with independent BloomingBit reporting also covering the investment and management changes.",
+      "grounding": "No unsupported claims or attribution issues remain, and the citations support the report’s substantive claims.",
+      "substance": "The report clearly explains the repayment demand, strengthened controls, investment conditions, fundraising context, CFO appointment and wider management pressures without a staleness issue.",
+      "conformance": "The report meets the hard length and paragraph requirements, and its title, subtitle, short title and tags perform their intended functions without visible coherence seams."
+    },
+    "signals": {
+      "body_words": 332,
+      "sources_total": 4,
+      "source_origins": [
+        "discovered",
+        "seed"
+      ],
+      "evidence_claims": 40,
+      "revision_passes": 0,
+      "sources_primary": 2,
+      "citations_placed": 5,
+      "revision_stalled": false,
+      "citations_dropped": 0,
+      "story_date_source": "page",
+      "story_source_date": "2026-10-20",
+      "newest_source_date": "2026-10-20",
+      "story_source_age_days": 0,
+      "newest_source_age_days": 0,
+      "sources_judged_article": 2,
+      "dated_sources_by_origin": {
+        "seed": 1,
+        "discovered": 2
+      },
+      "coherence_issues_remaining": 0,
+      "sources_contributing_claims": 4,
+      "attribution_issues_remaining": 0,
+      "unsupported_claims_remaining": 0
+    },
+    "graded_at": "2026-10-20T11:16:20.512121+00:00",
+    "dimensions": {
+      "sourcing": 3,
+      "grounding": 3,
+      "substance": 3,
+      "conformance": 3
+    }
+  },
+  "related_reports": [
+    {
+      "id": "nSwQIiEsgs",
+      "title": "Polymarket hires growth chief and reshapes marketing before fall trading surge",
+      "relation": "background",
+      "created_at": "2026-08-12T06:53:25.581Z"
+    }
+  ],
+  "created_at": "2026-10-20T11:16:20.543Z",
+  "content_updated_at": null
+}
