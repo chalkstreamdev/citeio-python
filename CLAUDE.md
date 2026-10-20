@@ -92,6 +92,7 @@ existing material that touches the same files or systems. Then follow
 ### Executing a plan
 
 - Work task by task, in order. Update each task's status in the plan file as you go.
+- When every task before the deploy is done, set the plan's `Status` to `Built — <when it may deploy>`. The code is then in the tree and not live. A deploy that ships the working tree carries every `Built` plan, so check the `Built` and `In progress` plans before each deploy.
 - Documentation tasks are completion criteria, exactly like tests. A plan is not complete while its Update Documentation task is outstanding. Bump the `**Date:**` line on any doc you modify.
 - Present the finished work for review. Do not commit.
 

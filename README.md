@@ -41,7 +41,7 @@ A report can cite an earlier report from the same organisation. Cite sends that 
 
 ## The `presentation` object
 
-`get_report` returns the report detail. Its `presentation` key holds the parts of the report that a page shows: `title`, `short_title`, `subtitle`, `paragraphs`, and `sources`. Each paragraph is a list of runs. A run is plain text, an external link (`url`), or an internal link (`report_id`). Cite computes the object from the stored report on every request. The full field list is in Cite's API documentation.
+`get_report` returns the report detail. Its `presentation` key holds the parts of the report that a page shows: `title`, `short_title`, `subtitle`, `paragraphs`, and `sources`. Each paragraph is a list of runs. A run is plain text, an external link (`url`), or an internal link (`report_id`). Cite computes the object from the stored report on every request. The full field list is in the [API reference](https://cite.io/api/docs).
 
 `body_html` and `sources_html` accept the report detail or the `presentation` object. Both escape all text. Only `http` and `https` URLs become links. External links carry `rel="noopener noreferrer"`; pass `nofollow=True` to add `nofollow`. A field or a run that the library does not know renders as plain text or as nothing, so a new Cite field does not break your page.
 
