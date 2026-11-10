@@ -1,3 +1,4 @@
+import copy
 import html
 import json
 import re
@@ -162,3 +163,50 @@ def test_live_fixture_renders(live):
     assert out.count('<p class="citeio-paragraph">') == len(live["presentation"]["paragraphs"])
     for run in internal:
         assert html.escape(run["text"], quote=True) in out
+
+
+# The profile fixture is one Predictable profile version, Kalshi's, saved from
+# cite.io as served (docs/plans/2026-11-09-client-methods-for-profiles.md,
+# Task 2). A profile's `presentation` has the report's shape, so the same
+# functions render it.
+def resolve_all(report_id):
+    return f"/news/{report_id}/"
+
+
+@pytest.fixture
+def profile():
+    return json.loads((FIXTURES / "profile_detail.json").read_text(encoding="utf-8"))
+
+
+def test_profile_detail_renders(profile):
+    presentation = profile["presentation"]
+    assert presentation["paragraphs"] and presentation["sources"], "the fixture has a body"
+    body = body_html(profile, resolve_all)
+    sources = sources_html(profile, resolve_all)
+    assert body.count('<p class="citeio-paragraph">') == len(presentation["paragraphs"])
+    assert sources.count('<li class="citeio-source ') == len(presentation["sources"])
+    assert body == body_html(presentation, resolve_all)
+    assert sources == sources_html(presentation, resolve_all)
+
+
+def test_profile_internal_links_use_the_resolver(profile):
+    runs = [r for para in profile["presentation"]["paragraphs"] for r in para]
+    internal = [r for r in runs if "report_id" in r]
+    assert internal, "the fixture has an internal citation"
+    linked = body_html(profile, resolve_all)
+    assert linked.count('<a class="citeio-link citeio-internal"') == len(internal)
+    for run in internal:
+        assert f'href="{html.escape(resolve_all(run["report_id"]), quote=True)}"' in linked
+    plain = body_html(profile, lambda report_id: None)
+    assert "citeio-internal" not in plain
+    for run in internal:
+        assert html.escape(run["text"], quote=True).replace("\n", "<br>") in plain
+    assert "citeio-internal" not in sources_html(profile, lambda report_id: None)
+
+
+def test_profile_unknown_keys_are_ignored(profile):
+    changed = copy.deepcopy(profile)
+    changed["profile_kind"] = {"new": "field"}
+    changed["presentation"]["paragraphs"][0][0]["footnote"] = 3
+    assert body_html(changed, resolve_all) == body_html(profile, resolve_all)
+    assert sources_html(changed, resolve_all) == sources_html(profile, resolve_all)

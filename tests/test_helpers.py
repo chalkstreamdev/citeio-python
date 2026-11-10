@@ -11,6 +11,16 @@ def test_publishable_default_rule():
     assert not publishable({})
 
 
+def test_publishable_reads_a_version_row():
+    def row(grade):
+        return {"id": "v1", "created_at": "2026-11-06T09:00:00Z", "grade": grade}
+
+    assert publishable(row(3))
+    assert publishable(row(2))
+    assert not publishable(row(1))
+    assert not publishable(row(None))
+
+
 def test_publishable_include_ungraded():
     assert publishable({"grade": None}, include_ungraded=True)
     assert publishable({}, include_ungraded=True)

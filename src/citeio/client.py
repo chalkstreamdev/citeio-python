@@ -1,7 +1,8 @@
 """The HTTP client for Cite's public API, on the standard library.
 
-Three calls, all a site needs: the report list for one project, one report's
-detail, and an image download. There are no retries and no caching: the
+Five calls, all a site needs: the report list for one project, one report's
+detail, the profile list for one field of a project, one profile version, and
+an image download. There are no retries and no caching: the
 customer's scheduler is the retry, and the customer's build owns any cache.
 Network errors (`URLError`, timeouts) pass through unchanged, because they are
 not the API's fault. A non-2xx response raises `APIError`.
@@ -99,6 +100,27 @@ class Client:
         """Return the detail of one report: its `content`, its `presentation`
         object, and the same fields as its list row."""
         return self._get_json(f"reports/{report_id}/")
+
+    def list_profiles(self, project_id: str, field: str) -> list[dict[str, Any]]:
+        """Return the profile list of one choice field of `project_id`, as served.
+
+        One item per value on the field's choice list that has at least one
+        version, in the choice list's order: `{"value", "versions"}`. Each
+        item's versions are newest first, each with `id`, `created_at` and
+        `grade` (1 to 3, or null for ungraded). The list is one call, not
+        paged. A version never changes, so fetch each `id` once and keep it.
+        """
+        return self._get_json(f"projects/{project_id}/profiles/", field=field)
+
+    def get_profile(self, version_id: str) -> dict[str, Any]:
+        """Return the detail of one profile version: its `content`, its
+        `presentation` object, and the same fields as its list item.
+
+        `presentation` renders with `body_html` and `sources_html` as a
+        report's does. Its internal links are report ids; the caller's
+        `resolve` turns each one into a URL.
+        """
+        return self._get_json(f"profiles/{version_id}/")
 
     def download_image(self, url: str, dest: str | os.PathLike[str]) -> None:
         """Stream the image at `url` to `dest`. Returns nothing.

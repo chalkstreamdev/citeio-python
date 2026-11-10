@@ -39,6 +39,20 @@ A report can cite an earlier report from the same organisation. Cite sends that 
 
 `resolve` is a function that you supply. It takes a report id and returns your URL for that report, or `None`. When it returns `None`, the citation renders as plain text and the report is left out of the Sources list. When you omit `resolve`, every internal citation renders as plain text.
 
+## Profiles
+
+Cite can also write a profile of each value of a choice field, such as each operator in an `operator` field. Each rewrite of a profile is a new version with its own id. `list_profiles` returns one item per value, with that value's versions newest first. `get_profile` returns one version. A version's `presentation` has the report's shape, so `body_html` and `sources_html` render it with the same `resolve`.
+
+```python
+for item in client.list_profiles(project_id="...", field="operator"):
+    version = next((v for v in item["versions"] if citeio.publishable(v)), None)
+    if version:
+        profile = client.get_profile(version["id"])
+        print(item["value"], citeio.body_html(profile, resolve))
+```
+
+A version never changes after Cite writes it. Cache each version by its `id`, and fetch it once.
+
 ## The `presentation` object
 
 `get_report` returns the report detail. Its `presentation` key holds the parts of the report that a page shows: `title`, `short_title`, `subtitle`, `paragraphs`, and `sources`. Each paragraph is a list of runs. A run is plain text, an external link (`url`), or an internal link (`report_id`). Cite computes the object from the stored report on every request. The full field list is in the [API reference](https://cite.io/api/docs).

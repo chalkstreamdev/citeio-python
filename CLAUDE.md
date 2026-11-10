@@ -4,7 +4,7 @@ Guidance for Claude Code when working in this repository.
 
 ## What this is
 
-`citeio` is the open-source Python library that renders Cite research reports on a customer's own site. It wraps the three Cite API calls a site needs (list a project's reports, get one report, download an image), turns a report's `presentation` object into two HTML fragments (`body_html` and `sources_html`), and offers two helpers (`publishable` and `parse_datetime`). The public API is six names: `Client`, `APIError`, `body_html`, `sources_html`, `publishable`, and `parse_datetime`. Everything else is private.
+`citeio` is the open-source Python library that renders Cite research reports on a customer's own site. It wraps the five Cite API calls a site needs (list a project's reports, get one report, list a field's profiles, get one profile version, download an image), turns a report's or a profile's `presentation` object into two HTML fragments (`body_html` and `sources_html`), and offers two helpers (`publishable` and `parse_datetime`). The public API is six names: `Client`, `APIError`, `body_html`, `sources_html`, `publishable`, and `parse_datetime`. Everything else is private.
 
 The design is in the chalkstream.dev repo: [`../chalkstream.dev/docs/specs/2026-09-23-citeio-python-library.md`](../chalkstream.dev/docs/specs/2026-09-23-citeio-python-library.md). Read it before you change what the library does.
 

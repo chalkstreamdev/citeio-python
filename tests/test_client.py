@@ -117,3 +117,54 @@ def test_download_image_streams_without_key(fake, tmp_path):
     assert request.full_url == "https://cite.io/media/example.png"
     assert request.get_header("X-api-key") is None
     assert request.get_header("User-agent").startswith("citeio-python/")
+
+
+def test_list_profiles_path_and_field(fake):
+    body = [{"value": "Kalshi", "versions": [{"id": "v1", "created_at": "x", "grade": 3}]}]
+    f = fake(body)
+    assert Client("k").list_profiles("p1", "operator") == body
+    assert len(f.requests) == 1
+    assert urlparse(f.requests[0].full_url).path == "/api/projects/p1/profiles/"
+    assert query(f.requests[0]) == {"field": "operator"}
+
+
+def test_list_profiles_is_one_call(fake):
+    body = [{"value": f"v{n}", "versions": []} for n in range(60)]
+    f = fake(body)
+    assert len(Client("k").list_profiles("p1", "operator")) == 60
+    assert len(f.requests) == 1
+
+
+def test_get_profile_path(fake):
+    f = fake({"id": "v1", "presentation": {"title": "T"}})
+    assert Client("k").get_profile("v1") == {"id": "v1", "presentation": {"title": "T"}}
+    assert len(f.requests) == 1
+    assert f.requests[0].full_url == "https://cite.io/api/profiles/v1/"
+
+
+def test_profile_calls_send_the_headers(fake):
+    f = fake([], {"id": "v1"})
+    client = Client("key-1", timeout=7)
+    client.list_profiles("p1", "operator")
+    client.get_profile("v1")
+    for request in f.requests:
+        assert request.get_header("X-api-key") == "key-1"
+        assert request.get_header("User-agent") == (
+            f"citeio-python/{citeio.__version__} (+https://github.com/chalkstreamdev/citeio-python)"
+        )
+        assert request.get_header("Accept") == "application/json"
+    assert f.timeouts == [7, 7]
+
+
+def test_profile_404_raises_api_error(fake):
+    urls = (
+        "https://cite.io/api/projects/p1/profiles/?field=title",
+        "https://cite.io/api/profiles/nope/",
+    )
+    calls =(lambda c: c.list_profiles("p1", "title"), lambda c: c.get_profile("nope"))
+    for url, call in zip(urls, calls, strict=True):
+        fake(HTTPError(url, 404, "Not Found", {}, io.BytesIO(b'{"detail": "Not found."}')))
+        with pytest.raises(APIError) as caught:
+            call(Client("k"))
+        assert caught.value.status == 404
+        assert caught.value.url == url
